@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 1em 0;
+        }
+        form {
+            background: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1em;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            color: #555;
+        }
+        input[type="text"], input[type="number"], input[type="email"], input[type="submit"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+        .form-group {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Management System</h1>
+    </header>
+    <div class="container">
+      
+        <section>
+            <h2>Create Customer</h2>
+            <form id="createCustomerForm">
+                <div class="form-group">
+                    <label for="customerName">Name:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Email:</label>
+                    <input type="email" id="customerEmail" required>
+                </div>
+                <input type="submit" value="Create Customer">
+            </form>
+        </section>
+
+   
+        <section>
+            <h2>Retrieve Customer</h2>
+            <form id="getCustomerForm">
+                <div class="form-group">
+                    <label for="getCustomerId">Customer ID:</label>
+                    <input type="number" id="getCustomerId" required>
+                </div>
+                <input type="submit" value="Get Customer">
+            </form>
+            <pre id="customerResult"></pre>
+        </section>
+
+      
+        <section>
+            <h2>Update Customer</h2>
+            <form id="updateCustomerForm">
+                <div class="form-group">
+                    <label for="updateCustomerId">Customer ID:</label>
+                    <input type="number" id="updateCustomerId" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateCustomerName">New Name:</label>
+                    <input type="text" id="updateCustomerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateCustomerEmail">New Email:</label>
+                    <input type="email" id="updateCustomerEmail" required>
+                </div>
+                <input type="submit" value="Update Customer">
+            </form>
+        </section>
+
+       
+        <section>
+            <h2>Delete Customer</h2>
+            <form id="deleteCustomerForm">
+                <div class="form-group">
+                    <label for="deleteCustomerId">Customer ID:</label>
+                    <input type="number" id="deleteCustomerId" required>
+                </div>
+                <input type="submit" value="Delete Customer">
+            </form>
+        </section>
+
+       
+        <section>
+            <h2>Create Product</h2>
+            <form id="createProductForm">
+                <div class="form-group">
+                    <label for="productName">Name:</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price:</label>
+                    <input type="number" step="0.01" id="productPrice" required>
+                </div>
+                <div class="form-group">
+                    <label for="productQuantity">Quantity:</label>
+                    <input type="number" id="productQuantity" required>
+                </div>
+                <input type="submit" value="Create Product">
+            </form>
+        </section>
+
+      
+        <section>
+            <h2>Retrieve Product</h2>
+            <form id="getProductForm">
+                <div class="form-group">
+                    <label for="getProductId">Product ID:</label>
+                    <input type="number" id="getProductId" required>
+                </div>
+                <input type="submit" value="Get Product">
+            </form>
+            <pre id="productResult"></pre>
+        </section>
+
+       
+        <section>
+            <h2>Update Product</h2>
+            <form id="updateProductForm">
+                <div class="form-group">
+                    <label for="updateProductId">Product ID:</label>
+                    <input type="number" id="updateProductId" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateProductName">New Name:</label>
+                    <input type="text" id="updateProductName" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateProductPrice">New Price:</label>
+                    <input type="number" step="0.01" id="updateProductPrice" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateProductQuantity">New Quantity:</label>
+                    <input type="number" id="updateProductQuantity" required>
+                </div>
+                <input type="submit" value="Update Product">
+            </form>
+        </section>
+
+       
+        <section>
+            <h2>Delete Product</h2>
+            <form id="deleteProductForm">
+                <div class="form-group">
+                    <label for="deleteProductId">Product ID:</label>
+                    <input type="number" id="deleteProductId" required>
+                </div>
+                <input type="submit" value="Delete Product">
+            </form>
+        </section>
+
+      
+        <section>
+            <h2>Create Order</h2>
+            <form id="createOrderForm">
+                <div class="form-group">
+                    <label for="orderProducts">Product IDs (comma separated):</label>
+                    <input type="text" id="orderProducts" required>
+                </div>
+                <input type="submit" value="Create Order">
+            </form>
+        </section>
+
+     
+        <section>
+            <h2>Retrieve Order</h2>
+            <form id="getOrderForm">
+                <div class="form-group">
+                    <label for="getOrderId">Order ID:</label>
+                    <input type="number" id="getOrderId" required>
+                </div>
+                <input type="submit" value="Get Order">
+            </form>
+            <pre id="orderResult"></pre>
+        </section>
+
+       
+        <section>
+            <h2>Update Order</h2>
+            <form id="updateOrderForm">
+                <div class="form-group">
+                    <label for="updateOrderId">Order ID:</label>
+                    <input type="number" id="updateOrderId" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateOrderProducts">Product IDs (comma separated):</label>
+                    <input type="text" id="updateOrderProducts" required>
+                </div>
+                <input type="submit" value="Update Order">
+            </form>
+        </section>
+
+       
+        <section>
+            <h2>Delete Order</h2>
+            <form id="deleteOrderForm">
+                <div class="form-group">
+                    <label for="deleteOrderId">Order ID:</label>
+                    <input type="number" id="deleteOrderId" required>
+                </div>
+                <input type="submit" value="Delete Order">
+            </form>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
